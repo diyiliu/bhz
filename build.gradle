@@ -1,0 +1,51 @@
+group 'com.tiza'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'idea'
+
+compileJava {
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+}
+
+compileTestJava {
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+}
+
+ext {
+    nettyVersion = '4.0.33.Final'
+    lombokVersion = 'lombok:1.16.6'
+    druidVersion = '1.0.16'
+    dbutilsVersion = '1.6'
+    sqljdbc4Version = '4.0'
+    slf4jVersion = '1.7.13'
+    logbackVersion = '1.1.3'
+    rxtxVersion = '2.1.7'
+    formRTVersion = '7.0.3'
+    junitVersion = '4.12'
+}
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+
+    compile(
+            "io.netty:netty-all:$nettyVersion",
+            "org.projectlombok:$lombokVersion",
+            "com.alibaba:druid:$druidVersion",
+            "commons-dbutils:commons-dbutils:$dbutilsVersion",
+            "com.microsoft.sqlserver:sqljdbc4:$sqljdbc4Version",
+            "org.rxtx:rxtx:$rxtxVersion",
+            "com.intellij:forms_rt:$formRTVersion",
+            "org.slf4j:slf4j-api:$slf4jVersion",
+            "ch.qos.logback:logback-classic:$logbackVersion"
+    )
+
+    testCompile(
+            "junit:junit:$junitVersion",
+    )
+}

@@ -1,0 +1,63 @@
+[ ERROR] [2016-01-14 16:00:16] com.tiza.xgdl.Main.main [70] - [配置信息]--程序将监听串口COM2... ...
+[ ERROR] [2016-01-14 16:00:18] com.alibaba.druid.pool.DruidDataSource.main [809] - testWhileIdle is true, validationQuery not set
+[ ERROR] [2016-01-14 16:00:20] com.alibaba.druid.pool.DruidDataSource.main [809] - testWhileIdle is true, validationQuery not set
+[ ERROR] [2016-01-14 16:00:20] com.tiza.xgdl.comm.ClientConnector.main [43] - port conn error:
+gnu.io.NoSuchPortException: null
+	at gnu.io.CommPortIdentifier.getPortIdentifier(CommPortIdentifier.java:218) ~[rxtx-2.1.7.jar:na]
+	at io.netty.channel.rxtx.RxtxChannel.doConnect(RxtxChannel.java:66) ~[netty-all-4.0.33.Final.jar:4.0.33.Final]
+	at io.netty.channel.rxtx.RxtxChannel$RxtxUnsafe.connect(RxtxChannel.java:142) ~[netty-all-4.0.33.Final.jar:4.0.33.Final]
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.connect(DefaultChannelPipeline.java:1097) ~[netty-all-4.0.33.Final.jar:4.0.33.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeConnect(AbstractChannelHandlerContext.java:481) ~[netty-all-4.0.33.Final.jar:4.0.33.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.connect(AbstractChannelHandlerContext.java:466) ~[netty-all-4.0.33.Final.jar:4.0.33.Final]
+	at io.netty.channel.ChannelOutboundHandlerAdapter.connect(ChannelOutboundHandlerAdapter.java:47) ~[netty-all-4.0.33.Final.jar:4.0.33.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeConnect(AbstractChannelHandlerContext.java:481) ~[netty-all-4.0.33.Final.jar:4.0.33.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.connect(AbstractChannelHandlerContext.java:466) ~[netty-all-4.0.33.Final.jar:4.0.33.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.connect(AbstractChannelHandlerContext.java:448) ~[netty-all-4.0.33.Final.jar:4.0.33.Final]
+	at io.netty.channel.DefaultChannelPipeline.connect(DefaultChannelPipeline.java:908) ~[netty-all-4.0.33.Final.jar:4.0.33.Final]
+	at io.netty.channel.AbstractChannel.connect(AbstractChannel.java:203) ~[netty-all-4.0.33.Final.jar:4.0.33.Final]
+	at io.netty.bootstrap.Bootstrap$2.run(Bootstrap.java:166) ~[netty-all-4.0.33.Final.jar:4.0.33.Final]
+	at io.netty.channel.ThreadPerChannelEventLoop.run(ThreadPerChannelEventLoop.java:52) ~[netty-all-4.0.33.Final.jar:4.0.33.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:112) ~[netty-all-4.0.33.Final.jar:4.0.33.Final]
+	at java.lang.Thread.run(Thread.java:745) ~[na:1.8.0_45]
+[ ERROR] [2016-01-14 16:02:09] com.tiza.xgdl.Main.AWT-EventQueue-0 [72] - [配置信息]--程序将监听串口COM2... ...
+[ ERROR] [2016-01-14 16:02:10] com.alibaba.druid.pool.DruidDataSource.AWT-EventQueue-0 [809] - testWhileIdle is true, validationQuery not set
+[ ERROR] [2016-01-14 16:02:12] com.alibaba.druid.pool.DruidDataSource.AWT-EventQueue-0 [809] - testWhileIdle is true, validationQuery not set
+[ ERROR] [2016-01-14 16:02:12] com.tiza.xgdl.comm.ClientConnector.AWT-EventQueue-0 [43] - port conn error:
+gnu.io.NoSuchPortException: null
+	at gnu.io.CommPortIdentifier.getPortIdentifier(CommPortIdentifier.java:218) ~[rxtx-2.1.7.jar:na]
+	at io.netty.channel.rxtx.RxtxChannel.doConnect(RxtxChannel.java:66) ~[netty-all-4.0.33.Final.jar:4.0.33.Final]
+	at io.netty.channel.rxtx.RxtxChannel$RxtxUnsafe.connect(RxtxChannel.java:142) ~[netty-all-4.0.33.Final.jar:4.0.33.Final]
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.connect(DefaultChannelPipeline.java:1097) ~[netty-all-4.0.33.Final.jar:4.0.33.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeConnect(AbstractChannelHandlerContext.java:481) ~[netty-all-4.0.33.Final.jar:4.0.33.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.connect(AbstractChannelHandlerContext.java:466) ~[netty-all-4.0.33.Final.jar:4.0.33.Final]
+	at io.netty.channel.ChannelOutboundHandlerAdapter.connect(ChannelOutboundHandlerAdapter.java:47) ~[netty-all-4.0.33.Final.jar:4.0.33.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeConnect(AbstractChannelHandlerContext.java:481) ~[netty-all-4.0.33.Final.jar:4.0.33.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.connect(AbstractChannelHandlerContext.java:466) ~[netty-all-4.0.33.Final.jar:4.0.33.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.connect(AbstractChannelHandlerContext.java:448) ~[netty-all-4.0.33.Final.jar:4.0.33.Final]
+	at io.netty.channel.DefaultChannelPipeline.connect(DefaultChannelPipeline.java:908) ~[netty-all-4.0.33.Final.jar:4.0.33.Final]
+	at io.netty.channel.AbstractChannel.connect(AbstractChannel.java:203) ~[netty-all-4.0.33.Final.jar:4.0.33.Final]
+	at io.netty.bootstrap.Bootstrap$2.run(Bootstrap.java:166) ~[netty-all-4.0.33.Final.jar:4.0.33.Final]
+	at io.netty.channel.ThreadPerChannelEventLoop.run(ThreadPerChannelEventLoop.java:52) ~[netty-all-4.0.33.Final.jar:4.0.33.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:112) ~[netty-all-4.0.33.Final.jar:4.0.33.Final]
+	at java.lang.Thread.run(Thread.java:745) ~[na:1.8.0_45]
+[ ERROR] [2016-01-14 16:07:17] com.tiza.xgdl.Main.AWT-EventQueue-0 [72] - [配置信息]--程序将监听串口COM2... ...
+[ ERROR] [2016-01-14 16:07:17] com.alibaba.druid.pool.DruidDataSource.AWT-EventQueue-0 [809] - testWhileIdle is true, validationQuery not set
+[ ERROR] [2016-01-14 16:07:18] com.alibaba.druid.pool.DruidDataSource.AWT-EventQueue-0 [809] - testWhileIdle is true, validationQuery not set
+[ ERROR] [2016-01-14 16:07:18] com.tiza.xgdl.comm.ClientConnector.AWT-EventQueue-0 [43] - port conn error:
+gnu.io.NoSuchPortException: null
+	at gnu.io.CommPortIdentifier.getPortIdentifier(CommPortIdentifier.java:218) ~[rxtx-2.1.7.jar:na]
+	at io.netty.channel.rxtx.RxtxChannel.doConnect(RxtxChannel.java:66) ~[netty-all-4.0.33.Final.jar:4.0.33.Final]
+	at io.netty.channel.rxtx.RxtxChannel$RxtxUnsafe.connect(RxtxChannel.java:142) ~[netty-all-4.0.33.Final.jar:4.0.33.Final]
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.connect(DefaultChannelPipeline.java:1097) ~[netty-all-4.0.33.Final.jar:4.0.33.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeConnect(AbstractChannelHandlerContext.java:481) ~[netty-all-4.0.33.Final.jar:4.0.33.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.connect(AbstractChannelHandlerContext.java:466) ~[netty-all-4.0.33.Final.jar:4.0.33.Final]
+	at io.netty.channel.ChannelOutboundHandlerAdapter.connect(ChannelOutboundHandlerAdapter.java:47) ~[netty-all-4.0.33.Final.jar:4.0.33.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeConnect(AbstractChannelHandlerContext.java:481) ~[netty-all-4.0.33.Final.jar:4.0.33.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.connect(AbstractChannelHandlerContext.java:466) ~[netty-all-4.0.33.Final.jar:4.0.33.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.connect(AbstractChannelHandlerContext.java:448) ~[netty-all-4.0.33.Final.jar:4.0.33.Final]
+	at io.netty.channel.DefaultChannelPipeline.connect(DefaultChannelPipeline.java:908) ~[netty-all-4.0.33.Final.jar:4.0.33.Final]
+	at io.netty.channel.AbstractChannel.connect(AbstractChannel.java:203) ~[netty-all-4.0.33.Final.jar:4.0.33.Final]
+	at io.netty.bootstrap.Bootstrap$2.run(Bootstrap.java:166) ~[netty-all-4.0.33.Final.jar:4.0.33.Final]
+	at io.netty.channel.ThreadPerChannelEventLoop.run(ThreadPerChannelEventLoop.java:52) ~[netty-all-4.0.33.Final.jar:4.0.33.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:112) ~[netty-all-4.0.33.Final.jar:4.0.33.Final]
+	at java.lang.Thread.run(Thread.java:745) ~[na:1.8.0_45]

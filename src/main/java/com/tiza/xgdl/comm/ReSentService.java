@@ -20,7 +20,7 @@ public class ReSentService implements Runnable {
 
     @Override
     public void run() {
-        System.out.println("缓存数据 ："+Main.resentMap.size());
+        LOGGER.info("缓存数据 ：" + Main.resentMap.size());
         for (Map.Entry<Integer, ConcurrentHashMap> entry : Main.resentMap.entrySet()) {
             long nowTime = System.currentTimeMillis();
             ConcurrentHashMap tempMap = entry.getValue();

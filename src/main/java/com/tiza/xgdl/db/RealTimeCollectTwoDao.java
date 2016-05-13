@@ -86,6 +86,7 @@ public class RealTimeCollectTwoDao implements Runnable {
         //mil = DlUtil.StringToDate("2013-06-04 15:18:06","yyyy-MM-dd HH:mm:ss").getTime();
         String timeStr = Main.long2String(mil);
         String sql = "SELECT  [生产时间] as compareField ,'realTimeCollectTwo,' + CONVERT(varchar(100), [生产时间], 121)+','+cast([骨料秤值] as nvarchar)+','+cast([粉料秤值] as nvarchar)+','+cast([沥青秤值] as nvarchar)+','+cast([配比名称] as nvarchar)+','+cast([生产批次] as nvarchar)+','+cast([批次小计] as nvarchar)+','+cast([单盘重量] as nvarchar)+','+cast([单盘实时值] as nvarchar)+','+cast([第一盘产量] as nvarchar)+','+cast([第二盘产量] as nvarchar)+','+cast([骨料1设定值] as nvarchar)+','+cast([骨料1稳定值] as nvarchar)+','+cast([骨料1第一盘值] as nvarchar)+','+cast([骨料1第二盘值] as nvarchar)+','+cast([骨料2设定值] as nvarchar)+','+cast([骨料2稳定值] as nvarchar)+','+cast([骨料2第一盘值] as nvarchar)+','+cast([骨料2第二盘值] as nvarchar)+','+cast([骨料3设定值] as nvarchar)+','+cast([骨料3稳定值] as nvarchar)+','+cast([骨料3第一盘值] as nvarchar)+','+cast([骨料3第二盘值] as nvarchar)+','+cast([骨料4设定值] as nvarchar)+','+cast([骨料4稳定值] as nvarchar)+','+cast([骨料4第一盘值] as nvarchar)+','+cast([骨料4第二盘值] as nvarchar)+','+cast([骨料5设定值] as nvarchar)+','+cast([骨料5稳定值] as nvarchar)+','+cast([骨料5第一盘值] as nvarchar)+','+cast([骨料5第二盘值] as nvarchar)+','+cast([骨料6设定值] as nvarchar)+','+cast([骨料6稳定值] as nvarchar)+','+cast([骨料6第一盘值] as nvarchar)+','+cast([骨料6第二盘值] as nvarchar)+','+cast([粉料1设定值] as nvarchar)+','+cast([粉料1稳定值] as nvarchar)+','+cast([粉料1第一盘值] as nvarchar)+','+cast([粉料1第二盘值] as nvarchar)+','+cast([粉料2设定值] as nvarchar)+','+cast([粉料2稳定值] as nvarchar)+','+cast([粉料2第一盘值] as nvarchar)+','+cast([粉料2第二盘值] as nvarchar)+','+cast([沥青设定值] as nvarchar)+','+cast([沥青稳定值] as nvarchar)+','+cast([沥青第一盘值] as nvarchar)+','+cast([沥青第二盘值] as nvarchar)+','+cast([搅拌倒记时] as nvarchar) as result FROM [UserDatabase].[dbo].[实时采集2] where [生产时间] > '" + timeStr + "'";
+        logger.debug(sql);
         BeanListHandler<CommonBean> handler = new BeanListHandler<CommonBean>(CommonBean.class);
         QueryRunner runner = new QueryRunner(Main.uDS);
         try {
@@ -96,7 +97,11 @@ public class RealTimeCollectTwoDao implements Runnable {
                 long tempDate = DlUtil.StringToDate(record.getCompareField(), "yyyy-MM-dd HH:mm:ss").getTime();
                 mil = tempDate > mil ? tempDate : mil;
                 try {
-                    record.sendNomArray(record.getResult());
+                    if (record.getResult() != null) {
+                        record.sendNomArray(record.getResult());
+                    }else {
+                        logger.warn("[实时采集2]数据异常！[生产时间：{}, 编码器实时值：{}]", record.getCompareField(), record.getResult());
+                    }
                 } catch (Exception e) {
                     logger.error("send historyRecord error:" ,e);
                     //e.printStackTrace();

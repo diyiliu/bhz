@@ -68,7 +68,7 @@ public class Main {
         if (null == COM_NAME || COM_NAME.equals("")) {
             logger.error("[串口错误]--没有获取到程序监听的串口名称,请在vehicle.propertis中设置\"com=COM2\"类似的配置");
         } else {
-            logger.error("[配置信息]--程序将监听串口" + COM_NAME + "... ...");
+            logger.info("[配置信息]--程序将监听串口" + COM_NAME + "... ...");
         }
         initDataSource();
         //加载监听

@@ -83,7 +83,7 @@ public class ClientHandler extends ChannelInboundHandlerAdapter {
         ByteBuf buf = (ByteBuf) msg;
         byte[] testBytes = new byte[buf.readableBytes()];
         buf.readBytes(testBytes);
-        logger.info("最终获取的信息为：" + DlUtil.bytes2String(testBytes));
+        logger.info("收到终端消息为：" + DlUtil.bytes2String(testBytes));
 
         buf.resetReaderIndex();
         byte[] temp = new byte[3];
@@ -98,7 +98,7 @@ public class ClientHandler extends ChannelInboundHandlerAdapter {
             logger.info("未能获取解析类，命令ID为:" + orderId);
             return;
         }
-        command.decodeMessageRet(ByteBuffer.wrap(content),temp,length,serial);
+        command.decodeMessageRet(ByteBuffer.wrap(content), temp, length, serial);
 
 
         /*switch (orderId) {
@@ -145,13 +145,10 @@ public class ClientHandler extends ChannelInboundHandlerAdapter {
     @Override
     public void channelUnregistered(ChannelHandlerContext ctx) throws Exception {
         final EventLoop eventLoop = ctx.channel().eventLoop();
-        eventLoop.schedule(new Runnable() {
-            @Override
-            public void run() {
-                logger.info("串口连接断开,正在重连中...");
-                connector = new ClientConnector(new RxtxDeviceAddress(Main.getConfig("com")));
-                connector.run();
-            }
+        eventLoop.schedule(() -> {
+            logger.info("串口连接断开,正在重连中...");
+            connector = new ClientConnector(new RxtxDeviceAddress(Main.getConfig("com")));
+            connector.run();
         }, 5, TimeUnit.SECONDS);
     }
 }

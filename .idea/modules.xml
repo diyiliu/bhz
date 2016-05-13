@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/bhz.iml" filepath="$PROJECT_DIR$/bhz.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/bhz.iml" filepath="$PROJECT_DIR$/.idea/modules/bhz.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/bhz_main.iml" filepath="$PROJECT_DIR$/.idea/modules/bhz_main.iml" group="bhz" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/bhz_test.iml" filepath="$PROJECT_DIR$/.idea/modules/bhz_test.iml" group="bhz" />
     </modules>
   </component>
 </project>

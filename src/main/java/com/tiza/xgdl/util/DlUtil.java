@@ -180,7 +180,7 @@ public class DlUtil {
      * @param array
      */
     public static void pack(byte[] array) {
-        System.out.println("pack 中发送的长度：" + array.length);
+        logger.info("pack 中发送的长度：" + array.length);
         byte[] content = new byte[array.length + 9];
         content[0] = 0x7E;
         content[1] = 0x08;

@@ -24,7 +24,7 @@ public class SendDataCom implements Runnable {
         while (true) {
             while (!Main.workQueue.isEmpty()) {
                 final byte[] array = Main.workQueue.poll();
-                LOGGER.info("test ::: "+DlUtil.bytes2String(array));
+                LOGGER.debug("test ::: " + DlUtil.bytes2String(array));
                 if (null == array || array.length == 0) {
                     continue;
                 }
@@ -38,17 +38,22 @@ public class SendDataCom implements Runnable {
                 Main.comCTX.writeAndFlush(buf).addListener(new ChannelFutureListener() {
                     @Override
                     public void operationComplete(ChannelFuture future) throws Exception {
-                        if(future.isSuccess() && orderId == 0x0C){
-                            LOGGER.info("send info is ：" + DlUtil.bytes2String(array));
-                            ConcurrentHashMap map = new ConcurrentHashMap();
-                            map.put("sentTime",System.currentTimeMillis());
-                            map.put("sentContent",array);
-                            Main.resentMap.put(serial,map);
-                            try {
-                                Thread.sleep(100);
-                            } catch (InterruptedException e) {
-                                LOGGER.error("thread error", e);
+
+                        if (future.isSuccess()) {
+                            LOGGER.debug("send info is ：" + DlUtil.bytes2String(array));
+                            if (orderId == 0x0C) {
+                                ConcurrentHashMap map = new ConcurrentHashMap();
+                                map.put("sentTime", System.currentTimeMillis());
+                                map.put("sentContent", array);
+                                Main.resentMap.put(serial, map);
+                                try {
+                                    Thread.sleep(100);
+                                } catch (InterruptedException e) {
+                                    LOGGER.error("thread error", e);
+                                }
                             }
+                        } else {
+                            LOGGER.error("send info failed: {}", future.cause().getStackTrace());
                         }
                     }
                 });

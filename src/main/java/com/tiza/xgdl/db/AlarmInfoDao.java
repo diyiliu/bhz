@@ -36,7 +36,7 @@ public class AlarmInfoDao implements Runnable {
             compareId = Integer.parseInt(val);
         }
         String sql = "SELECT [id] as compareField , 'alarmInfo,' + CAST([id] AS nvarchar)+','+[AlmPosition]+','+ [AlmPoint]+','+CONVERT(varchar(100), [AlmTime], 121)+','+[AlmInfo]+','+CAST([AlmStatus] AS nvarchar)+','+CAST([AlmClass] AS nvarchar)+','+ CAST([AlmValue] as nvarchar)+','+CAST([AlmNo] AS nvarchar)+','+[AlmMono]+','+CAST([sendFlag] as nvarchar) as result FROM [ReportData].[dbo].[AlarmInfo] where [id]> '" + compareId + "'";
-
+        logger.debug(sql);
         BeanListHandler<CommonBean> handler = new BeanListHandler<CommonBean>(CommonBean.class);
         QueryRunner runner = new QueryRunner(Main.rDS);
         try {
@@ -56,7 +56,6 @@ public class AlarmInfoDao implements Runnable {
         } catch (SQLException e) {
             logger.error("查询数据库失败", e);
         }
-        logger.info("保存的最大ID为：" + compareId);
         Main.writeFile(key, String.valueOf(compareId));
     }
 }
